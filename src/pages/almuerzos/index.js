@@ -1,28 +1,14 @@
-import styled, { withTheme } from 'styled-components'
+import WrapperSection from '../../components/wrappersection'
+import CardItem from '../../components/carditem'
 
 const AlmuerzosContainer = (props) => {
     const
-        { theme } = props,
-
-        AlmuerzosContainer = styled.div`
-            width: calc(100% - 2rem);
-            padding: 1rem;
-            display: flex;
-            justify-content: center;
-            font-size: ${theme.fontSizes.subtitle};
-            font-family: ${theme.fonts.primary};
-            color: ${theme.textColors.main};
-        `,
-
-        H1 = styled.h1`
-            font-size:  ${theme.fontSizes.title};
-        `
+        { dataRender } = props,
+        almuerzos = dataRender.almuerzos.values
 
     return (
-        <AlmuerzosContainer>
-            <H1>Almuerzos</H1>
-        </AlmuerzosContainer>
+        <WrapperSection title={"Almuerzos"} content={Object.values(almuerzos).map((item, idx) => !item.activo ? null : <CardItem key={idx} item={item} />)} />
     )
 }
 
-export default withTheme(AlmuerzosContainer)
+export default AlmuerzosContainer

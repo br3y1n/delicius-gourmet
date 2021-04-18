@@ -36,6 +36,12 @@ const PriceList = (props) => {
             display: flex;
             justify-content: space-between;
             border-bottom: 0.125rem  ${theme.textColors.content} dotted;
+        `,
+
+        DivItemSpent = styled(DivItem)`
+            text-decoration: line-through ${theme.textColors.spent};
+            text-decoration-thickness: 0.16rem;
+            color:  ${theme.textColors.spent};
         `
 
 
@@ -43,12 +49,25 @@ const PriceList = (props) => {
         <PriceList>
             <H2>{title}</H2>
             <ListContainer>
-                {Object.values(values.values).map(item => (
-                    <DivItem>
-                        <p>{item.item}</p>
-                        <p>{item.precio}</p>
-                    </DivItem>
-                ))}
+                {Object.values(values.values).map((item, idx) => !item.activo
+                    ? null
+                    : (
+                        !item.agotado
+                            ? (
+                                <DivItem key={idx}>
+                                    <p>{item.item}</p>
+                                    <p>{item.precio}</p>
+                                </DivItem>
+
+                            )
+                            : (
+                                <DivItemSpent key={idx}>
+                                    <p>{item.item}</p>
+                                    <p>{item.precio}</p>
+                                </DivItemSpent>
+
+                            )
+                    ))}
             </ListContainer>
 
 

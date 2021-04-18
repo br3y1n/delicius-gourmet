@@ -1,28 +1,14 @@
-import styled, { withTheme } from 'styled-components'
+import WrapperSection from '../../components/wrappersection'
+import CardItem from '../../components/carditem'
 
 const BebidasContainer = (props) => {
     const
-        { theme } = props,
-
-        BebidasContainer = styled.div`
-            width: calc(100% - 2rem);
-            padding: 1rem;
-            display: flex;
-            justify-content: center;
-            font-size: ${theme.fontSizes.subtitle};
-            font-family: ${theme.fonts.primary};
-            color: ${theme.textColors.main};
-        `,
-
-        H1 = styled.h1`
-            font-size:  ${theme.fontSizes.title};
-        `
+        { dataRender } = props,
+        bebidas = dataRender.bebidas.values
 
     return (
-        <BebidasContainer>
-            <H1>Bebidas</H1>
-        </BebidasContainer>
+        <WrapperSection title={"Bebidas"} content={Object.values(bebidas).map((item, idx) => !item.activo ? null : <CardItem key={idx} item={item} />)} />
     )
 }
 
-export default withTheme(BebidasContainer)
+export default BebidasContainer
