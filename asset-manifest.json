@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/delicius-gourmet/static/css/main.bf83d1c5.chunk.css",
-    "main.js": "/delicius-gourmet/static/js/main.5c2815eb.chunk.js",
-    "main.js.map": "/delicius-gourmet/static/js/main.5c2815eb.chunk.js.map",
+    "main.js": "/delicius-gourmet/static/js/main.5398487b.chunk.js",
+    "main.js.map": "/delicius-gourmet/static/js/main.5398487b.chunk.js.map",
     "runtime-main.js": "/delicius-gourmet/static/js/runtime-main.53f9f23b.js",
     "runtime-main.js.map": "/delicius-gourmet/static/js/runtime-main.53f9f23b.js.map",
     "static/js/2.3d1dc1b1.chunk.js": "/delicius-gourmet/static/js/2.3d1dc1b1.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.53f9f23b.js",
     "static/js/2.3d1dc1b1.chunk.js",
     "static/css/main.bf83d1c5.chunk.css",
-    "static/js/main.5c2815eb.chunk.js"
+    "static/js/main.5398487b.chunk.js"
   ]
 }
