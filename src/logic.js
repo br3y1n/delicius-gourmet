@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import logo from './assets/images/logo.png';
 import './App.css';
 import { useEffect, useState } from "react"
 
@@ -65,14 +65,6 @@ const App = () => {
         <p>
           Delicius Gourmet
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
     </div>
   );
