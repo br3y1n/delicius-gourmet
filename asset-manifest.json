@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/delicius-gourmet/static/css/main.bf83d1c5.chunk.css",
+    "main.js": "/delicius-gourmet/static/js/main.79c4413b.chunk.js",
+    "main.js.map": "/delicius-gourmet/static/js/main.79c4413b.chunk.js.map",
+    "runtime-main.js": "/delicius-gourmet/static/js/runtime-main.53f9f23b.js",
+    "runtime-main.js.map": "/delicius-gourmet/static/js/runtime-main.53f9f23b.js.map",
+    "static/js/2.e0f67c8c.chunk.js": "/delicius-gourmet/static/js/2.e0f67c8c.chunk.js",
+    "static/js/2.e0f67c8c.chunk.js.map": "/delicius-gourmet/static/js/2.e0f67c8c.chunk.js.map",
+    "index.html": "/delicius-gourmet/index.html",
+    "static/css/main.bf83d1c5.chunk.css.map": "/delicius-gourmet/static/css/main.bf83d1c5.chunk.css.map",
+    "static/js/2.e0f67c8c.chunk.js.LICENSE.txt": "/delicius-gourmet/static/js/2.e0f67c8c.chunk.js.LICENSE.txt",
+    "static/media/styles.css": "/delicius-gourmet/static/media/Timotheo.b8aa7d36.ttf",
+    "static/media/logo.a19df20c.png": "/delicius-gourmet/static/media/logo.a19df20c.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.53f9f23b.js",
+    "static/js/2.e0f67c8c.chunk.js",
+    "static/css/main.bf83d1c5.chunk.css",
+    "static/js/main.79c4413b.chunk.js"
+  ]
+}
