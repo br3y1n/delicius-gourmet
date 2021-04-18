@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { cloneElement } from 'react'
 import styled, { withTheme } from 'styled-components'
+import { useSelector } from 'react-redux'
+import { useEffect, useState } from 'react'
 import Navbar from '../components/navbar'
 import Footer from '../components/footer'
 
@@ -7,6 +9,9 @@ const Layout = (props) => {
 
     const
         { theme, children } = props,
+        [showItems, setShowItems] = useState(false),
+        [dataRender, setDataRender] = useState(undefined),
+        data = useSelector(({ mainData }) => mainData),
 
         Header = styled.header`
             width: 100%;
@@ -19,7 +24,20 @@ const Layout = (props) => {
             width: calc(100% - 2rem);
             min-height: calc(calc(calc(100% - ${theme.sizesFrame.footerH}) - ${theme.sizesFrame.headerH}) - 2rem);
             padding: calc(${theme.sizesFrame.headerH} + 1rem) 1rem 1rem 1rem;
+        `,
+
+        H1 = styled.h1`
+            font-size:  ${theme.fontSizes.title};
+            font-family: ${theme.fonts.primary};
+            color: ${theme.textColors.main};
         `
+
+
+    useEffect(async () => {
+        const dataGoogleSheets = await data
+        setDataRender(dataGoogleSheets)
+        setShowItems(true)
+    }, []);
 
     return (
         <React.Fragment>
@@ -27,7 +45,7 @@ const Layout = (props) => {
                 <Navbar />
             </Header>
             <Section>
-                {children}
+                {!showItems ? <H1>Cargando...</H1> : cloneElement(children, { dataRender })}
             </Section>
             <Footer />
         </React.Fragment>

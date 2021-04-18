@@ -1,17 +1,12 @@
-import logo from './assets/images/logo.png';
-import './App.css';
-import { useEffect, useState } from "react"
 
-
-const getData = async () => {
-  const SHEET_ID = "18XEdllvhMFlR_kiK5nDi0JWRHW0DyOmEUzbjhlBd3Bg"
-  const sheetApi = {
-    worksheets: `https://spreadsheets.google.com/feeds/worksheets/${SHEET_ID}/public/full?alt=json`,
-    cells: numberSheet => `https://spreadsheets.google.com/feeds/cells/${SHEET_ID}/${numberSheet}/public/full?alt=json`,
+export const getGoogleSheetData = async (sheetId) => {
+  const sheetApis = {
+    worksheets: `https://spreadsheets.google.com/feeds/worksheets/${sheetId}/public/full?alt=json`,
+    cells: numberSheet => `https://spreadsheets.google.com/feeds/cells/${sheetId}/${numberSheet}/public/full?alt=json`,
   }
   const data = { worksheets: {} }
 
-  const getWorksheets = await fetch(sheetApi.worksheets)
+  const getWorksheets = await fetch(sheetApis.worksheets)
   const getWorksheetsJSON = await getWorksheets.json()
   const { entry: entryWorksheets } = getWorksheetsJSON.feed
 
@@ -28,7 +23,7 @@ const getData = async () => {
 
     data[sheetName] = { headers: {}, values: {} }
 
-    const getCells = await fetch(sheetApi.cells(numberSheet))
+    const getCells = await fetch(sheetApis.cells(numberSheet))
     const getCellsJSON = await getCells.json()
     const { entry: entryCells } = getCellsJSON.feed
 
@@ -48,26 +43,3 @@ const getData = async () => {
   return data
 }
 
-const App = () => {
-  const [sheetData, setSheetData] = useState(null);
-
-  useEffect(async () => {
-    const dataGoogleSheets = await getData()
-    console.log(dataGoogleSheets)
-    setSheetData(dataGoogleSheets);
-  }, []);
-
-
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Delicius Gourmet
-        </p>
-      </header>
-    </div>
-  );
-}
-
-export default App;

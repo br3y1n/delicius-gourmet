@@ -15,7 +15,7 @@ export const theme = {
     },
     textColors: {
         main: '#939599',
-        content: '#bebfc2'
+        content: '#66686B'
     },
     fonts: {
         primary: 'Timotheo',
